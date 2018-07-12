@@ -2,9 +2,10 @@ const table = require( "../table" )
 
 class UserService {
 
-  constructor() {
+  constructor( { autoconnect = true } ) {
     this.users = []
     this.userById = {}
+    if ( autoconnect ) this.load()
   }
 
   async loadUser( partitionKey, rowKey ) {
