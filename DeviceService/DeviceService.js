@@ -9,8 +9,9 @@ class DeviceService {
     if ( autoconnect ) this.load()
   }
 
-  async loadDevice( partitionKey, rowKey ) {
-    console.log( "NOT IMPLEMENTED", { partitionKey, rowKey } )
+  async loadDevice( { deviceId } ) {
+    await this.load()
+    return this.deviceById[deviceId]
   }
 
   async load() {
