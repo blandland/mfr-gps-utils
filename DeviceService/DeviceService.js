@@ -2,11 +2,11 @@ const table = require( "../table" )
 
 class DeviceService {
 
-  constructor({autoconnect = true}) {
+  constructor( { autoconnect = true } = {} ) {
     this.devices = []
     this.deviceById = {}
     this.devicesByContact = {}
-    if(autoconnect) this.load()
+    if ( autoconnect ) this.load()
   }
 
   async loadDevice( partitionKey, rowKey ) {

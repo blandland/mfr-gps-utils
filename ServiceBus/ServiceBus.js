@@ -7,7 +7,7 @@ class ServiceBus {
     if ( !queueName ) throw new Error( "queueName not set" )
     this.queueName = queueName
     this.bus = azure.createServiceBusService()
-    autoConnect && this.connect( queueName )
+    if ( autoConnect ) this.connect( queueName )
   }
 
   connect( queueName ) {
