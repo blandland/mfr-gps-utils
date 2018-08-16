@@ -28,7 +28,7 @@ class ServiceBus {
   delete( lockedMessage ) {
     return new Promise( ( resolve, reject ) => {
       this.bus.deleteMessage( lockedMessage, function ( deleteError ) {
-        if ( !deleteError ) {
+        if ( deleteError ) {
           reject( deleteError )
         } else {
           resolve( true )
